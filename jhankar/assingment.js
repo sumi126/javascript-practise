@@ -39,6 +39,9 @@ console.log(brickCalculator(15))
 function tinyFriend(names){
     let smallNameArray = [names[0]];
     let smallName = names[0],flag = 0;
+    if(names.length ==0){
+        console.log('Please Enter your friends name. ');
+    }
     for(let i =1;i<names.length;i++){
         if(smallName.length >= names[i].length){            
             if(smallName.length == names[i].length){
