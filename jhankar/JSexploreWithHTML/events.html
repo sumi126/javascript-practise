@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try events</title>
+</head>
+<body>
+    <h1 onclick="alert('I am Sumi.')">Explore Event</h1>
+    <p onclick="clickMe()">I'm just exploring javascript in html</p>
+    <button onclick="console.log('Where are you gone?')">Click me</button>
+
+    <button class="btn-1">Click Me -1</button>
+    <button class="btn-2">Click Me -2</button>
+    <button class="btn-3">Click Me -3</button>
+    <button id="btn-4">Click Me -4</button>
+
+    <script>
+        function clickMe() {
+            console.log('I am not able to go for any link');
+            document.body.style.backgroundColor = 'cyan';
+        }
+        var firstButton = document.querySelector('.btn-1');
+        firstButton.onclick = clickMe;
+        var secondButton = document.querySelector('.btn-2');
+        secondButton.onclick = function() {
+            console.log('I am inner function');
+        }
+        var thirdButton = document.querySelector('.btn-3');
+        thirdButton.addEventListener('click',clickMe);
+
+        document.getElementById('btn-4').addEventListener('click',function(){
+            document.body.style.color = 'tomato';
+        });
+    </script>
+</body>
+</html>

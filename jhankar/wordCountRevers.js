@@ -7,7 +7,7 @@ for(let i=0;i<sentence.length;i++){
 }
 console.log(count,sentence.length);
 
-//using buildin function
+//using build in function
 let word = sentence.split(/\s+/);
 console.log(word.length);
 
