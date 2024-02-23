@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Explore</title>
+</head>
+<body>
+    <h1>JSON</h1>
+    <h2>JavaScript Object Notation</h2>
+    <ul id="list-container">
+
+    </ul>
+    <script>
+       fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(json => displayUsers(json))
+
+      function displayUsers(users){
+        const userNames = users.map(user => user.username);
+        console.log(userNames);
+        const ul = document.getElementById("list-container");
+
+        for(let i = 0;i<userNames.length;i++){
+            const li = document.createElement("li");
+            li.innerText = userNames[i];
+            ul.appendChild(li);
+        }
+      }
+    </script>
+</body>
+</html>
