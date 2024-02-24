@@ -9,7 +9,12 @@
     <h1>JSON</h1>
     <h2>JavaScript Object Notation</h2>
 
+    <input id="title" type="text"><br>
+    <input id="body" type="text"><br>
+    <button id="submit">submit</button>
+
     <script>
+        //get function 
         const user = {
             id:126,
             name:"Sumi",
@@ -24,6 +29,30 @@
          const userFromJSON = JSON.parse(userJSON);
         console.log(userFromJSON);
         
+        //post function
+        document.getElementById("submit").addEventListener("click",function(){
+            const title = document.getElementById("title").value;
+            const bodyContent = document.getElementById("body").value;
+
+            post = {
+                title:title,
+                body:bodyContent
+            }
+
+            postToserver(post);
+        })
+        function postToserver(postInfo){
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body: JSON.stringify(postInfo),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+                })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+
+        }
     </script>
 </body>
 </html>
