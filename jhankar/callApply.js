@@ -1,14 +1,21 @@
 const normalPerson = {
     firstName : 'Imratuzzahan',
     lastName : 'Sumi',
-    salery:15000,
+    salary:15000,
     getFullName : function(){
         console.log(this.firstName, this.lastName)
     } ,
-    chargBill:function(amount){
-        this.salery = this.salery - amount;
-        return this.salery;
+    chargeBill:function(amount){
+        this.salary = this.salary - amount;
+        return this.salary;
     }
 }
-normalPerson.chargBill(500);
-console.log(normalPerson.salery);
+normalPerson.chargeBill(500);
+const friendlyPersion = {
+    firstName : "Fatema",
+    lastName : "Kotha",
+    salary : 34000
+}
+//normalPerson.chargeBill(4000);
+const friendlyChargeBill = normalPerson.chargeBill.bind(friendlyPersion);
+console.log(friendlyChargeBill(4000));
