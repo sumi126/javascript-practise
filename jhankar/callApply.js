@@ -19,3 +19,10 @@ const friendlyPersion = {
 //normalPerson.chargeBill(4000);
 const friendlyChargeBill = normalPerson.chargeBill.bind(friendlyPersion);
 console.log(friendlyChargeBill(4000));
+
+//same process by call function
+normalPerson.chargeBill.call(friendlyPersion,500);
+console.log(friendlyPersion.salary);
+
+normalPerson.chargeBill.apply(friendlyPersion,[500]);
+console.log(friendlyPersion.salary);
